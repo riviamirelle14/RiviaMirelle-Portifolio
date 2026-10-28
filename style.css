@@ -1,0 +1,1508 @@
+/* ==================================================
+   1. CORES E CONFIGURAÇÕES GERAIS
+   ================================================== */
+
+/* Cores padrão do modo claro. */
+:root {
+    --wine-dark: #561C24;
+    --wine: #6D2932;
+    --beige: #C7B7A3;
+    --cream: #E8D8C4;
+
+    --background: #F8F4EF;
+    --surface: #FFFCF8;
+    --surface-alt: #F0E8DF;
+    --text: #302522;
+    --text-soft: #766A62;
+    --border: #E3D5C8;
+
+    --accent: var(--wine);
+    --accent-hover: var(--wine-dark);
+
+    --shadow: 0 12px 35px rgba(66, 35, 30, 0.08);
+
+    --font-title: "Playfair Display", Georgia, serif;
+    --font-body: "DM Sans", Arial, sans-serif;
+
+    --container: 1120px;
+}
+
+/* Cores do modo escuro inspiradas na paleta enviada. */
+body.dark-mode {
+    --background: #241315;
+    --surface: #35191D;
+    --surface-alt: #451E25;
+
+    --text: #E8D8C4;
+    --text-soft: #C7B7A3;
+    --border: #6D2932;
+
+    --accent: #C7B7A3;
+    --accent-hover: #E8D8C4;
+
+    --shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ==================================================
+   2. RESET E ESTILOS GERAIS
+   ================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body,
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+    font: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--beige);
+    outline-offset: 5px;
+}
+
+section {
+    scroll-margin-top: 10px;
+}
+
+.section {
+    width: min(var(--container), 90%);
+    margin-inline: auto;
+    padding-block: 50px;
+}
+
+
+/* ==================================================
+   3. CABEÇALHO
+   ================================================== */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+
+    transition: background-color 0.3s ease;
+}
+
+.header-container {
+    width: min(1240px, 92%);
+    min-height: 82px;
+    margin-inline: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.brand,
+.footer-brand {
+    font-family: var(--font-title);
+    font-size: 2.1rem;
+    font-weight: 700;
+    letter-spacing: -2px;
+    color: var(--wine-dark);
+}
+
+.brand span,
+.footer-brand span {
+    color: var(--beige);
+}
+
+.dark-mode .brand,
+.dark-mode .footer-brand {
+    color: var(--cream);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.main-nav > a {
+    position: relative;
+    color: var(--text-soft);
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.main-nav > a::after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+
+    transition: width 0.25s ease;
+}
+
+.main-nav > a:hover {
+    color: var(--accent);
+}
+
+.main-nav > a:hover::after {
+    width: 100%;
+}
+
+/* Botão do modo claro/escuro. */
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background-color: var(--surface-alt);
+
+    font-size: 1.35rem;
+    cursor: pointer;
+
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(-10deg);
+}
+
+/* O menu só aparece em telas pequenas. */
+.menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+
+/* ==================================================
+   4. BOTÕES
+   ================================================== */
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.button {
+    min-height: 48px;
+    padding: 12px 22px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    border: 1px solid transparent;
+    border-radius: 5px;
+
+    font-size: 0.92rem;
+    font-weight: 600;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+.button-primary {
+    background-color: var(--wine);
+    color: #FFFFFF;
+}
+
+.button-primary:hover {
+    background-color: var(--wine-dark);
+}
+
+.dark-mode .button-primary {
+    background-color: var(--cream);
+    color: var(--wine-dark);
+}
+
+.dark-mode .button-primary:hover {
+    background-color: var(--beige);
+}
+
+.button-secondary {
+    border-color: var(--border);
+    color: var(--text);
+    background-color: transparent;
+}
+
+.button-secondary:hover {
+    background-color: var(--surface-alt);
+}
+
+
+/* ==================================================
+   5. INÍCIO
+   ================================================== */
+
+.hero {
+    min-height: 670px;
+    padding-top: 90px;
+    padding-bottom: 100px;
+
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 80px;
+
+    position: relative;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.eyebrow {
+    margin-bottom: 14px;
+
+    color: var(--accent);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+}
+
+.hero-label {
+    margin-bottom: 16px;
+
+    color: var(--text-soft);
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    margin-bottom: 22px;
+
+    font-family: var(--font-title);
+    font-size: clamp(2.8rem, 5vw, 4.7rem);
+    line-height: 1.12;
+    font-weight: 600;
+    letter-spacing: -1.5px;
+}
+
+.hero h1 span,
+.section-heading h2 span,
+.contact-text h2 span {
+    color: var(--accent);
+}
+
+.hero-description {
+    max-width: 520px;
+    color: var(--text-soft);
+    font-size: 1.05rem;
+}
+
+.hero-slogan {
+    max-width: 520px;
+    margin-top: 26px;
+
+    font-family: var(--font-title);
+    font-size: 1.3rem;
+    line-height: 1.5;
+}
+
+.hero-support {
+    max-width: 510px;
+    margin-top: 10px;
+
+    color: var(--text-soft);
+    font-size: 0.92rem;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 390px;
+    justify-self: end;
+}
+
+.image-frame {
+    position: relative;
+    padding: 12px;
+
+    border: 1px solid var(--border);
+    background-color: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.image-frame img {
+    width: 100%;
+    height: 470px;
+    object-fit: cover;
+    object-position: center 25%;
+}
+
+.image-caption {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+
+    margin-top: 16px;
+    color: var(--text-soft);
+    font-size: 0.78rem;
+}
+
+.image-caption span:first-child {
+    color: var(--text);
+    font-weight: 700;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    color: var(--accent);
+    font-size: 1.3rem;
+
+    transform: translateX(-50%);
+    transition: background-color 0.2s ease;
+}
+
+.scroll-indicator:hover {
+    background-color: var(--surface-alt);
+}
+
+
+/* ==================================================
+   6. TÍTULOS DAS SEÇÕES
+   ================================================== */
+
+.section-heading {
+    max-width: 760px;
+    margin-bottom: 20px; 
+}
+
+.section-heading h2,
+.contact-text h2 {
+    font-family: var(--font-title);
+    font-size: clamp(2rem, 4vw, 3.1rem);
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.section-description {
+    max-width: 650px;
+    margin-top: 16px;
+    color: var(--text-soft);
+}
+
+
+/* ==================================================
+   7. SOBRE MIM
+   ================================================== */
+
+.about-section {
+    border-top: 1px solid var(--border);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1.35fr 0.65fr;
+    align-items: start;
+    gap: 70px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    color: var(--text-soft);
+    font-size: 1rem;
+}
+
+.about-highlight {
+    padding: 32px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.highlight-symbol {
+    display: inline-block;
+    margin-bottom: 16px;
+
+    color: var(--accent);
+    font-size: 2rem;
+}
+
+.about-highlight h3 {
+    margin-bottom: 12px;
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+}
+
+.about-highlight p {
+    color: var(--text-soft);
+    font-size: 0.93rem;
+}
+
+.about-values {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.about-values span {
+    padding: 6px 10px;
+    border-radius: 3px;
+
+    background-color: var(--surface-alt);
+    color: var(--text);
+    font-size: 0.75rem;
+}
+
+
+/* ==================================================
+   8. HABILIDADES
+   ================================================== */
+
+.skills-section {
+    border-top: 1px solid var(--border);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.skill-card {
+    position: relative;
+    padding: 28px;
+
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background-color: var(--surface);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.skill-number {
+    display: block;
+    margin-bottom: 25px;
+
+    color: var(--accent);
+    font-family: var(--font-title);
+    font-size: 1.25rem;
+}
+
+.skill-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.skill-card p {
+    min-height: 82px;
+    color: var(--text-soft);
+    font-size: 0.88rem;
+}
+
+.skill-status {
+    display: inline-block;
+    margin-top: 22px;
+    padding-top: 12px;
+
+    border-top: 1px solid var(--border);
+    color: var(--accent);
+    font-size: 0.77rem;
+    font-weight: 600;
+}
+
+
+/* ==================================================
+   9. EXPERIÊNCIAS
+   ================================================== */
+
+.experiences-section {
+    border-top: 1px solid var(--border);
+}
+
+.experience-intro {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 50px;
+    align-items: start;
+
+    margin-bottom: 35px;
+    padding: 28px;
+
+    border-left: 3px solid var(--wine);
+    background-color: var(--surface);
+}
+
+.experience-tag {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.experience-intro h3 {
+    margin-top: 12px;
+    font-family: var(--font-title);
+    font-size: 1.6rem;
+    line-height: 1.3;
+}
+
+.experience-intro > p {
+    color: var(--text-soft);
+    font-size: 0.94rem;
+}
+
+/* ==================================================
+   NOVO CARROSSEL PAGINADO (FADE SUAVE)
+   ================================================== */
+
+/* Container principal do carrossel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    /* Define uma proporção fixa (16:9) para o carrossel não pular de tamanho */
+    aspect-ratio: 16 / 9; 
+    background-color: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+/* O trilho que segura as fotos (não usamos mais display flex para deslizar, e sim sobreposição) */
+.carousel-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Cada slide ocupa o espaço inteiro e é a base para as imagens */
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    transition: opacity 1.2s ease, transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    z-index: 1;
+    overflow: hidden; /* Garante que as imagens não vazem do container */
+}
+
+/* Quando a classe 'active' é ativada pelo JS, a foto aparece */
+.carousel-slide.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    z-index: 2;
+}
+
+/* ESTILO DA IMAGEM DE FUNDO (OPACA E DESFOCADA) */
+.carousel-slide img.bg-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Preenche as laterais */
+    filter: blur(25px) brightness(0.4); /* Desfoca e escurece o fundo */
+    transform: scale(1.1); /* Evita bordas brancas do desfoque */
+    z-index: 1;
+}
+
+/* ESTILO DA IMAGEM PRINCIPAL (QUE APARECE INTEIRA) */
+.carousel-slide img:not(.bg-blur) {
+    position: relative; /* Fica por cima da imagem de fundo */
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Mostra a foto inteira sem cortes */
+    z-index: 2;
+}
+
+/* Legenda da foto */
+.carousel-slide figcaption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 30px 20px 20px;
+    background: linear-gradient(transparent, rgba(30, 15, 15, 0.95));
+    color: #FFFFFF;
+    font-size: 0.88rem;
+    pointer-events: none; 
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    z-index: 3; /* Fica acima de todas as imagens */
+}
+
+/* A legenda só aparece junto com a foto ativa */
+.carousel-slide.active figcaption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.carousel-slide figcaption span {
+    color: var(--cream);
+    font-size: 0.75rem;
+}
+
+/* Botões de navegação (setas) */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(86, 28, 36, 0.7);
+    color: #FFFFFF;
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: grid;
+    place-items: center;
+}
+
+.carousel-btn:hover {
+    background-color: var(--wine-dark);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev { left: 20px; }
+.carousel-btn.next { right: 20px; }
+
+/* Ajustes para telas de celular */
+@media (max-width: 760px) {
+    .carousel-container {
+        aspect-ratio: 4 / 3; /* Proporção mais alta para telas de celular */
+    }
+    
+    .carousel-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+    
+    .carousel-btn.prev { left: 10px; }
+    .carousel-btn.next { right: 10px; }
+}
+
+.experience-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+    margin-top: 28px;
+}
+
+.experience-footer p {
+    max-width: 600px;
+    color: var(--text-soft);
+    font-size: 0.9rem;
+}
+
+
+/* ==================================================
+   10. PROJETOS
+   ================================================== */
+
+.projects-section {
+    border-top: 1px solid var(--border);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.project-card {
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--surface);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.project-image {
+    position: relative;
+    display: block;
+    overflow: hidden;
+
+    height: 270px;
+    background-color: var(--surface-alt);
+}
+
+.project-image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image > img {
+    transform: scale(1.035);
+}
+
+.project-open {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+    background-color: var(--surface);
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+.project-info {
+    padding: 25px;
+}
+
+.project-category {
+    color: var(--accent);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+.project-info h3 {
+    margin-top: 10px;
+    font-family: var(--font-title);
+    font-size: 1.65rem;
+}
+
+.project-info > p {
+    min-height: 88px;
+    margin-top: 10px;
+
+    color: var(--text-soft);
+    font-size: 0.9rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 20px;
+    margin-bottom: 22px;
+}
+
+.project-tags span {
+    padding: 5px 10px;
+
+    border: 1px solid var(--border);
+    border-radius: 3px;
+
+    color: var(--text-soft);
+    font-size: 0.72rem;
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--accent);
+    font-size: 0.87rem;
+    font-weight: 700;
+}
+
+.text-link span {
+    transition: transform 0.2s ease;
+}
+
+.text-link:hover span {
+    transform: translate(3px, -3px);
+}
+
+.projects-note {
+    margin-top: 30px;
+    color: var(--text-soft);
+    font-size: 0.88rem;
+}
+
+/* Espaço para a imagem ainda não adicionada do Figma. */
+.figma-image {
+    display: grid;
+    place-items: center;
+}
+
+.figma-image.image-placeholder > img {
+    display: none;
+}
+
+.placeholder-content {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 20px;
+    color: var(--text-soft);
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.placeholder-icon {
+    width: 55px;
+    height: 55px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px dashed var(--accent);
+    border-radius: 50%;
+
+    color: var(--accent);
+    font-size: 2rem;
+}
+
+/* Esconde a indicação de espaço vazio quando a imagem existe. */
+.figma-image:not(.image-placeholder) .placeholder-content {
+    display: none;
+}
+
+
+/* ==================================================
+   11. CONTATO
+   ================================================== */
+
+.contact-section {
+    border-top: 1px solid var(--border);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.contact-text h2 {
+    max-width: 600px;
+}
+
+.contact-text > p:not(.eyebrow) {
+    max-width: 530px;
+    margin-top: 20px;
+    margin-bottom: 26px;
+
+    color: var(--text-soft);
+}
+
+.contact-image {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background-color: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.contact-image img {
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+    background-color: var(--cream);
+}
+
+.contact-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+
+    margin-top: 55px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    min-width: 0;
+    padding: 22px;
+
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background-color: var(--surface);
+
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-item:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.contact-icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+    background-color: var(--surface-alt);
+    color: var(--accent);
+    font-size: 1.25rem;
+}
+
+.contact-item > span:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.contact-item small {
+    color: var(--text-soft);
+    font-size: 0.76rem;
+}
+
+.contact-item strong {
+    overflow-wrap: anywhere;
+    font-size: 0.87rem;
+}
+
+.contact-arrow {
+    margin-left: auto;
+    color: var(--accent);
+}
+
+
+/* ==================================================
+   12. RODAPÉ
+   ================================================== */
+
+.site-footer {
+    padding: 25px 5% 25px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    background-color: var(--surface);
+}
+
+
+.footer-content {
+    width: min(1240px, 100%);
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.dRM p {
+    margin: 0;
+}
+
+
+.footer-brand {
+    font-size: 1.7rem;
+}
+
+.footer-content > p {
+    color: var(--text-soft);
+    font-size: 0.83rem;
+    text-align: center;
+}
+
+.footer-top-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.footer-top-link span {
+    font-size: 1.2rem;
+}
+
+.footer-note {
+    margin: 0;
+    margin-top: 22px;
+    padding-top: 20px;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--text-soft);
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+
+/* ==================================================
+   13. BOTÃO FLUTUANTE VOLTAR AO INÍCIO
+   ================================================== */
+
+.back-to-top {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 900;
+
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    background-color: var(--wine);
+    color: #FFFFFF;
+
+    font-size: 1.5rem;
+
+    box-shadow: var(--shadow);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(10px);
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease,
+        transform 0.25s ease,
+        background-color 0.2s ease;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: var(--wine-dark);
+}
+
+.dark-mode .back-to-top {
+    background-color: var(--cream);
+    color: var(--wine-dark);
+}
+
+.dark-mode .back-to-top:hover {
+    background-color: var(--beige);
+}
+
+
+/* ==================================================
+   14. RESPONSIVIDADE PARA TABLETS
+   ================================================== */
+
+@media (max-width: 1000px) {
+
+    .main-nav {
+        gap: 15px;
+    }
+
+    .main-nav > a {
+        font-size: 0.82rem;
+    }
+
+    .hero {
+        gap: 40px;
+    }
+
+    .about-content {
+        gap: 35px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contact-content {
+        gap: 35px;
+    }
+}
+
+
+/* ==================================================
+   15. MENU E LAYOUT PARA CELULARES
+   ================================================== */
+
+@media (max-width: 760px) {
+
+    html {
+        scroll-padding-top: 75px;
+    }
+
+    .section {
+        padding-block: 70px;
+    }
+
+    .header-container {
+        min-height: 72px;
+    }
+
+    .brand {
+        font-size: 1.9rem;
+    }
+
+    /* Exibe o botão hambúrguer. */
+    .menu-toggle {
+        width: 42px;
+        height: 42px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+
+        order: 2;
+    }
+
+    .menu-toggle span {
+        width: 24px;
+        height: 2px;
+
+        display: block;
+        border-radius: 2px;
+        background-color: var(--text);
+
+        transition: transform 0.2s ease;
+    }
+
+    /* Animação do botão quando o menu está aberto. */
+    .menu-toggle[aria-expanded="true"] span:first-child {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:last-child {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Menu que abre abaixo do cabeçalho. */
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        padding: 12px 5% 22px;
+
+        border-bottom: 1px solid var(--border);
+        background-color: var(--surface);
+        box-shadow: var(--shadow);
+    }
+
+    .main-nav.open {
+        display: flex;
+    }
+
+    .main-nav > a {
+        padding: 12px 0;
+        font-size: 0.95rem;
+    }
+
+    .main-nav > a::after {
+        display: none;
+    }
+
+    .theme-toggle {
+        margin-top: 12px;
+        align-self: flex-start;
+    }
+
+    /* Início em uma única coluna. */
+    .hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding-top: 65px;
+        padding-bottom: 90px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.7rem, 10vw, 4rem);
+    }
+
+    .hero-image {
+        width: min(100%, 400px);
+        justify-self: center;
+    }
+
+    .image-frame img {
+        height: 430px;
+    }
+
+    .scroll-indicator {
+        bottom: 20px;
+    }
+
+    /* Sobre mim. */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    /* Habilidades. */
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .skill-card {
+        padding: 22px;
+    }
+
+    .skill-card p {
+        min-height: 0;
+    }
+
+    /* Experiências. */
+    .experience-intro {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 22px;
+    }
+
+    .experience-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Projetos. */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image {
+        height: 260px;
+    }
+
+    .project-info > p {
+        min-height: 0;
+    }
+
+    /* Contato. */
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .contact-image img {
+        height: 260px;
+    }
+
+    .contact-links {
+        grid-template-columns: 1fr;
+        margin-top: 35px;
+    }
+
+    /* Rodapé. */
+    .footer-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .back-to-top {
+        right: 16px;
+        bottom: 16px;
+        width: 44px;
+        height: 44px;
+    }
+}
+
+
+/* ==================================================
+   16. AJUSTES PARA CELULARES MENORES
+   ================================================== */
+
+@media (max-width: 420px) {
+
+    .section {
+        width: 88%;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .image-frame img {
+        height: 350px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image {
+        height: 220px;
+    }
+
+    .contact-item {
+        padding: 16px;
+    }
+}
+
+
+/* ==================================================
+   17. ACESSIBILIDADE: MENOS ANIMAÇÕES
+   ================================================== */
+
+/* Respeita a preferência de quem reduz movimentos no dispositivo. */
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Organiza os cartões de contato em três colunas. */
+.contact-links {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Mantém os cartões organizados em telas menores. */
+@media (max-width: 760px) {
+    .contact-links {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 760px) {
+    .footer-content {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .footer-note {
+        padding-top: 15px;
+    }
+}

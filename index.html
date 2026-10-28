@@ -1,0 +1,765 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Portfólio de Rivia Mirelle, estudante de Tecnologia da Informação, com interesse em Front-end, design e criação de conteúdo digital.">
+
+    <title>Rivia Mirelle | Portfólio</title>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Importa as fontes utilizadas no projeto. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Conecta o arquivo de estilos. -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Conecta o JavaScript sem bloquear a leitura do HTML. -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Cabeçalho e navegação principal. -->
+    <header class="site-header" id="topo">
+
+        <div class="header-container">
+
+            <!-- Monograma RM no lugar do nome PORM. -->
+            <a href="#inicio" class="brand" aria-label="RM - Ir para o início">
+                RM<span>.</span>
+            </a>
+
+            <!-- Botão do menu para telas menores. -->
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                type="button"
+                aria-label="Abrir menu"
+                aria-controls="menu-principal"
+                aria-expanded="false">
+
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Links que levam às seções do portfólio. -->
+            <nav class="main-nav" id="menu-principal" aria-label="Menu principal">
+
+                <a href="#inicio">Início</a>
+                <a href="#sobre">Sobre mim</a>
+                <a href="#habilidades">Habilidades</a>
+                <a href="#experiencias">Experiências</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#contato">Contato</a>
+
+                <!-- Botão para alternar o tema da página. -->
+                <button
+                    class="theme-toggle"
+                    id="theme-toggle"
+                    type="button"
+                    aria-label="Ativar modo escuro"
+                    title="Ativar modo escuro">
+
+                    <span id="theme-icon" aria-hidden="true">☾</span>
+                </button>
+
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- 1. INÍCIO -->
+        <section class="hero section" id="inicio">
+
+            <div class="hero-content">
+
+                <p class="eyebrow" id="saudacao">
+                    Seja bem-vindo(a)!
+                </p>
+
+                <p class="hero-label">
+                    TECNOLOGIA, DESIGN E CRIATIVIDADE
+                </p>
+
+                <h1>
+                    Olá, sou <span>Rivia Mirelle.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Estudante de Tecnologia da Informação, interessada
+                    em desenvolvimento Front-end, design e criação de
+                    conteúdo digital.
+                </p>
+
+                <p class="hero-slogan">
+                    Ideias que ganham forma, projetos que geram confiança.
+                </p>
+
+                <p class="hero-support">
+                    Cada ideia merece um projeto pensado para ela.
+                    Com criatividade e propósito, busco transformar
+                    referências em soluções que façam sentido.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#projetos" class="button button-primary">
+                        Conheça meus projetos
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                    <a href="#sobre" class="button button-secondary">
+                        Sobre mim
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Fotografia utilizada na apresentação inicial. -->
+            <div class="hero-image">
+
+                <div class="image-frame">
+                    <img
+                        src="img/minha foto.jpeg"
+                        alt="Fotografia de Rivia Mirelle para seu portfólio pessoal">
+                </div>
+
+                <div class="image-caption">
+                    <span>Rivia Mirelle</span>
+                    <span>Em constante aprendizado.</span>
+                </div>
+
+            </div>
+
+            <a href="#sobre" class="scroll-indicator" aria-label="Ir para a seção Sobre mim">
+                <span aria-hidden="true">↓</span>
+            </a>
+
+        </section>
+
+
+        <!-- 2. SOBRE MIM -->
+        <section class="section about-section" id="sobre">
+
+            <div class="section-heading">
+                <p class="eyebrow">UM POUCO SOBRE MIM</p>
+                <h2>Quem sou <span>eu?</span></h2>
+            </div>
+
+            <div class="about-content">
+
+                <div class="about-text">
+
+                    <p>
+                        Meu nome é Rivia Mirelle Rosario Viana, tenho 16 anos
+                        e estou cursando o ensino médio técnico na área de
+                        Tecnologia da Informação. Gosto de explorar a
+                        criatividade por meio do design, da fotografia, da
+                        videografia e da criação de conteúdo digital.
+                    </p>
+
+                    <p>
+                        Tenho interesse em unir essas áreas ao desenvolvimento
+                        Front-end, utilizando a programação para criar sites,
+                        interfaces e projetos que combinem funcionalidade
+                        e identidade visual. Acredito que o trabalho também
+                        deve estar relacionado àquilo que nos motiva a aprender
+                        e evoluir.
+                    </p>
+
+                    <p>
+                        Quero ampliar meus conhecimentos em design, edição,
+                        ferramentas criativas e desenvolvimento web. Busco
+                        construir uma trajetória baseada na dedicação,
+                        na criatividade e na capacidade de transformar ideias
+                        em projetos bem planejados.
+                    </p>
+
+                </div>
+
+                <aside class="about-highlight">
+
+                    <span class="highlight-symbol" aria-hidden="true">✳</span>
+
+                    <h3>Meu propósito</h3>
+
+                    <p>
+                        Criar com intenção, aprender continuamente e desenvolver
+                        projetos que transmitam cuidado, confiança e identidade.
+                    </p>
+
+                    <div class="about-values">
+                        <span>Criatividade</span>
+                        <span>Dedicação</span>
+                        <span>Aprendizado</span>
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+
+        <!-- 3. HABILIDADES -->
+        <section class="section skills-section" id="habilidades">
+
+            <div class="section-heading">
+                <p class="eyebrow">CONHECIMENTOS E FERRAMENTAS</p>
+                <h2>Habilidades que estou <span>desenvolvendo.</span></h2>
+
+                <p class="section-description">
+                    Ferramentas que utilizo e conhecimentos que busco
+                    aprimorar ao longo da minha formação.
+                </p>
+            </div>
+
+            <div class="skills-grid">
+
+                <article class="skill-card">
+                    <span class="skill-number">01</span>
+                    <h3>HTML</h3>
+                    <p>
+                        Estruturação de páginas web por meio de elementos
+                        organizados e semânticos.
+                    </p>
+                    <span class="skill-status">Conhecimentos básicos</span>
+                </article>
+
+                <article class="skill-card">
+                    <span class="skill-number">02</span>
+                    <h3>CSS</h3>
+                    <p>
+                        Estilização de páginas, organização visual e
+                        adaptação de interfaces para diferentes telas.
+                    </p>
+                    <span class="skill-status">Conhecimentos básicos</span>
+                </article>
+
+                <article class="skill-card">
+                    <span class="skill-number">03</span>
+                    <h3>JavaScript</h3>
+                    <p>
+                        Introdução à programação e criação de interações
+                        em páginas web.
+                    </p>
+                    <span class="skill-status">Em desenvolvimento</span>
+                </article>
+
+                <article class="skill-card">
+                    <span class="skill-number">04</span>
+                    <h3>Canva</h3>
+                    <p>
+                        Criação de peças visuais, composições gráficas e
+                        conteúdos para plataformas digitais.
+                    </p>
+                    <span class="skill-status">Tenho familiaridade</span>
+                </article>
+
+                <article class="skill-card">
+                    <span class="skill-number">05</span>
+                    <h3>Figma</h3>
+                    <p>
+                        Exploração de layouts, referências visuais e
+                        organização de ideias para interfaces.
+                    </p>
+                    <span class="skill-status">Em desenvolvimento</span>
+                </article>
+
+                <article class="skill-card">
+                    <span class="skill-number">06</span>
+                    <h3>CapCut</h3>
+                    <p>
+                        Edição de vídeos, organização de cenas e criação
+                        de conteúdo audiovisual.
+                    </p>
+                    <span class="skill-status">Tenho familiaridade</span>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- 4. EXPERIÊNCIAS -->
+        <section class="section experiences-section" id="experiencias">
+
+            <div class="section-heading">
+                <p class="eyebrow">PRÁTICA E CRIATIVIDADE</p>
+                <h2>Experiências que contam <span>histórias.</span></h2>
+
+                <p class="section-description">
+                    A fotografia e a videografia me permitem registrar
+                    momentos, experimentar perspectivas e desenvolver
+                    meu olhar criativo.
+                </p>
+            </div>
+
+            <div class="experience-intro">
+
+                <div>
+                    <span class="experience-tag">PROJETO PESSOAL</span>
+                    <h3>Registros feitos com propósito.</h3>
+                </div>
+
+                <p>
+                    A PORM — Propósito, Ordem, Realização e Movimento — é
+                    meu projeto pessoal de criação de conteúdo. Por meio
+                    dele, realizo registros de eventos e momentos especiais,
+                    buscando valorizar cada experiência a partir de uma
+                    perspectiva própria.
+                </p>
+
+            </div>
+
+                        <div class="experience-gallery">
+                <div class="carousel-container">
+                    
+                    <button class="carousel-btn prev" id="prevBtn" aria-label="Foto anterior">❮</button>
+
+                    <div class="carousel-track">
+                    <!-- Slide 01 -->
+                    <figure class="experience-photo carousel-slide active">
+                        <img src="img/cobrindo evento - porm.jpeg" alt="" class="bg-blur" aria-hidden="true">
+                        <img src="img/cobrindo evento - porm.jpeg" alt="Rivia realizando um registro fotográfico durante um evento">
+                        <figcaption>
+                            <span>01</span>
+                            Registros de eventos
+                        </figcaption>
+                    </figure>
+
+                    <!-- Slide 02 -->
+                    <figure class="experience-photo carousel-slide">
+                        <img src="img/cobrindo evento igreja - porm.jpeg" alt="" class="bg-blur" aria-hidden="true">
+                        <img src="img/cobrindo evento igreja - porm.jpeg" alt="Fotografia em preto e branco de um registro realizado durante um evento">
+                        <figcaption>
+                            <span>02</span>
+                            Perspectivas e detalhes
+                        </figcaption>
+                    </figure>
+
+                    <!-- Slide 03 -->
+                    <figure class="experience-photo carousel-slide">
+                        <img src="img/cobrindo evento pretobranco - porm.jpeg" alt="" class="bg-blur" aria-hidden="true">
+                        <img src="img/cobrindo evento pretobranco - porm.jpeg" alt="Fotografia colorida de Rivia registrando um evento">
+                        <figcaption>
+                            <span>03</span>
+                            Fotografia e composição
+                        </figcaption>
+                    </figure>
+                </div>
+
+                    <button class="carousel-btn next" id="nextBtn" aria-label="Próxima foto">❯</button>
+                </div>
+            </div>
+
+            <div class="experience-footer">
+
+                <p>
+                    Meu objetivo é continuar praticando, experimentando
+                    novas possibilidades e aprimorando minhas habilidades
+                    em fotografia, vídeo e edição.
+                </p>
+
+                <a
+                    href="https://www.instagram.com/pelosmeusolhosrivia/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-link">
+
+                    Conheça meus registros no Instagram
+                    <span aria-hidden="true">↗</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- 5. PROJETOS -->
+        <section class="section projects-section" id="projetos">
+
+            <div class="section-heading">
+                <p class="eyebrow">PORTFÓLIO DE PROJETOS</p>
+                <h2>Ideias transformadas em <span>projetos.</span></h2>
+
+                <p class="section-description">
+                    Alguns dos projetos que desenvolvi durante minha
+                    formação e das experiências com criação digital.
+                </p>
+            </div>
+
+            <div class="projects-grid">
+
+                <!-- Projeto 1: SaúdeConecta. -->
+                <article class="project-card">
+
+                    <a
+                        class="project-image"
+                        href="https://riviamirelle14.github.io/SaudeConecta/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visualizar o projeto SaúdeConecta">
+
+                        <img
+                            src="img/Saude Conecta.png"
+                            alt="Tela do sistema SaúdeConecta">
+
+                        <span class="project-open" aria-hidden="true">↗</span>
+                    </a>
+
+                    <div class="project-info">
+
+                        <span class="project-category">SAÚDE E TECNOLOGIA</span>
+
+                        <h3>SaúdeConecta</h3>
+
+                        <p>
+                            Sistema desenvolvido com foco na organização
+                            de atendimentos sociais e no gerenciamento
+                            de médicos voluntários.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+
+                        <a
+                            class="text-link"
+                            href="https://riviamirelle14.github.io/SaudeConecta/"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            Acessar projeto
+                            <span aria-hidden="true">↗</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Projeto 2: FalaAí. -->
+                <article class="project-card">
+
+                    <a
+                        class="project-image"
+                        href="https://projetofalaai.pythonanywhere.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visualizar o projeto FalaAí">
+
+                        <img
+                            src="img/FalaAi.png"
+                            alt="Tela inicial da plataforma FalaAí">
+
+                        <span class="project-open" aria-hidden="true">↗</span>
+                    </a>
+
+                    <div class="project-info">
+
+                        <span class="project-category">COMUNICAÇÃO DIGITAL</span>
+
+                        <h3>FalaAí</h3>
+
+                        <p>
+                            Plataforma de comunicação que permite enviar
+                            sugestões, elogios e reclamações de forma
+                            anônima para uma organização.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Python</span>
+                            <span>Flask</span>
+                        </div>
+
+                        <a
+                            class="text-link"
+                            href="https://projetofalaai.pythonanywhere.com/"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            Acessar projeto
+                            <span aria-hidden="true">↗</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Projeto 3: Casa do Café. -->
+                <article class="project-card">
+
+                    <a
+                        class="project-image"
+                        href="https://riviamirelle14.github.io/casadocafe/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visualizar o projeto Casa do Café">
+
+                        <img
+                            src="img/Casa do Cafe.png"
+                            alt="Página inicial do site Casa do Café">
+
+                        <span class="project-open" aria-hidden="true">↗</span>
+                    </a>
+
+                    <div class="project-info">
+
+                        <span class="project-category">DESIGN E WEB</span>
+
+                        <h3>Casa do Café</h3>
+
+                        <p>
+                            Site de uma cafeteria com identidade visual
+                            própria, apresentação da marca e navegação
+                            organizada para destacar a experiência do cliente.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+
+                        <a
+                            class="text-link"
+                            href="https://riviamirelle14.github.io/casadocafe/"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            Acessar projeto
+                            <span aria-hidden="true">↗</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                                <!-- Projeto 4: Figma. -->
+                <article class="project-card figma-project">
+
+                    <a
+                        class="project-image figma-image"
+                        id="figma-image-link"
+                        href="https://www.figma.com/proto/cWSVqXlnxupjxvzcUYPOaT/Untitled?node-id=8-4&starting-point-node-id=8%3A4&t=UsAs26BV9udOPPth-1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visualizar o projeto no Figma">
+
+                        <!-- NOME EXATO DA IMAGEM QUE ESTÁ NA SUA PASTA IMG -->
+                        <img
+                            src="img/coleção de verão - figma.png"
+                            alt="Prévia do projeto criado no Figma">
+
+                        <span class="project-open" aria-hidden="true">↗</span>
+                    </a>
+
+                    <div class="project-info" id="projeto-figma">
+
+                        <span class="project-category">DESIGN DE INTERFACES</span>
+
+                        <h3>Projeto no Figma</h3>
+
+                        <p>
+                            Projeto visual desenvolvido no Figma, com foco
+                            na organização dos elementos, na composição
+                            da interface e na experiência de quem utiliza.
+                        </p>
+
+                        <div class="project-tags">
+                            <span>Figma</span>
+                            <span>UI Design</span>
+                            <span>Prototipação</span>
+                        </div>
+
+                        <a
+                            class="text-link"
+                            id="figma-project-link"
+                            href="https://www.figma.com/proto/cWSVqXlnxupjxvzcUYPOaT/Untitled?node-id=8-4&starting-point-node-id=8%3A4&t=UsAs26BV9udOPPth-1"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            Acessar projeto
+                            <span aria-hidden="true">↗</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <p class="projects-note">
+                Cada projeto representa uma oportunidade de aprender,
+                testar ideias e aprimorar meus conhecimentos.
+            </p>
+
+        </section>
+
+
+        <!-- 6. CONTATO -->
+        <section class="section contact-section" id="contato">
+
+            <div class="contact-content">
+
+                <div class="contact-text">
+
+                    <p class="eyebrow">VAMOS CONVERSAR?</p>
+
+                    <h2>
+                        Uma boa ideia pode ser o começo de algo <span>incrível.</span>
+                    </h2>
+
+                    <p>
+                        Estou aberta a conhecer novas ideias, compartilhar
+                        experiências e conversar sobre projetos relacionados
+                        a design, criação de conteúdo e tecnologia.
+                    </p>
+
+                    <a
+                        class="button button-primary"
+                        href="https://www.instagram.com/pelosmeusolhosrivia/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        Entre em contato
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                </div>
+
+                <!-- Cartão visual da seção de contato. -->
+                <div class="contact-image">
+
+                    <img
+                        src="img/logo da porm.jpeg"
+                        alt="Cartão de apresentação visual de Rivia Mirelle">
+
+                </div>
+
+            </div>
+
+            <div class="contact-links">
+
+                <a
+                    class="contact-item"
+                    href="mailto:SEU_EMAIL_PROFISSIONAL">
+
+                    <span class="contact-icon" aria-hidden="true">@</span>
+
+                    <span>
+                        <small>E-mail</small>
+                        <strong>Enviar uma mensagem</strong>
+                    </span>
+
+                    <span class="contact-arrow" aria-hidden="true">↗</span>
+
+                </a>
+
+                <a
+                    class="contact-item"
+                    href="https://www.instagram.com/pelosmeusolhosrivia/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    <span class="contact-icon" aria-hidden="true">◎</span>
+
+                    <span>
+                        <small>Instagram</small>
+                        <strong>@pelosmeusolhosrivia</strong>
+                    </span>
+
+                    <span class="contact-arrow" aria-hidden="true">↗</span>
+
+                </a>
+
+
+<!-- Cartão de contato do GitHub. -->
+<a
+    class="contact-item"
+    href="https://github.com/riviamirelle14""
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Acessar meu perfil no GitHub">
+
+    <span class="contact-icon" aria-hidden="true">⌘</span>
+
+    <span>
+        <small>GitHub</small>
+        <strong>Conheça meus projetos</strong>
+    </span>
+
+    <span class="contact-arrow" aria-hidden="true">↗</span>
+
+</a>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- 7. RODAPÉ -->
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <a href="#inicio" class="footer-brand" aria-label="RM - Ir para o início">
+                RM<span>.</span>
+            </a>
+
+            <div class="dRM">
+                <p>
+                Desenvolvido por Rivia Mirelle.
+                <span id="current-year"></span>
+            </p>
+            </div>
+
+            <!-- Link funcional para retornar ao início da página. -->
+            <a href="#inicio" class="footer-top-link">
+                Voltar ao início
+                <span aria-hidden="true">↑</span>
+            </a>
+
+        </div>
+
+        
+
+    </footer>
+
+
+    <!-- Botão flutuante para voltar ao topo. -->
+    <a
+        href="#inicio"
+        class="back-to-top"
+        id="back-to-top"
+        aria-label="Voltar ao início da página"
+        title="Voltar ao início">
+
+        <span aria-hidden="true">↑</span>
+
+    </a>
+
+</body>
+</html>
